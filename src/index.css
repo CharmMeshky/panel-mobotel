@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Vazir";
+  src: url("../public/fonts/Vazir.woff") format("woff");
+}
+
+@layer utilities {
+  .flex-row-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex-col-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .vazir {
+    font-family: "Vazir";
+  }
+  .vazir-bold {
+    font-family: "Vazir";
+    font-weight: bold;
+  }
+  .direction {
+    direction: rtl;
+  }
+  circle {
+    display: none;
+  }
+  .recharts-tooltip-label {
+    display: none;
+  }
+  .error {
+    color: red;
+    margin-top: 1px;
+    font-family: "Vazir";
+    font-weight: 600;
+  }
+  .direction {
+    direction: rtl;
+  }
+  .bgimage {
+    background-image: url(../public/images/body_back4.png);
+    background-attachment: fixed;
+  }
+  .bgsidebar {
+    background-image: url(../public/images/sideBack3.jpg);
+    background-attachment: fixed;
+  }
+  .sky {
+    background: linear-gradient(
+      to right,
+      RGBA(6, 182, 212),
+      RGBA(34, 211, 238)
+    );
+  }
+  .Purple {
+    background: linear-gradient(
+      to right,
+      RGBA(139, 92, 246),
+      RGBA(167, 139, 250)
+    );
+  }
+  .blue {
+    background: linear-gradient(
+      to right,
+      RGBA(59, 130, 246),
+      RGBA(96, 165, 250)
+    );
+  }
+  .modal {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .navlinks a.active {
+    color: #068fff;
+  }
+  .modal-parent,
+  .form-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+    font-family: "Vazir";
+    opacity: 0;
+    visibility: hidden;
+  }
+  .modal-parent.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .delete-modal {
+    background-color: white;
+    padding: 50px;
+    text-align: center;
+    border: 2.5px solid #ff0101;
+    background: white;
+    border-radius: 25px;
+  }
+  .delete-modal-btns {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+  }
+  .delete-btn {
+    width: 30%;
+    margin-top: 30px;
+    font-size: 1.3rem;
+    padding: 10px 0;
+    border-radius: 15px;
+  }
+  .login {
+    background-image: url(../public/images/bgUser.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+  }
+  .circle {
+    background: #068fff;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .circle::before {
+    background-color: #068fff;
+    content: "";
+    display: table;
+    border-radius: 50%;
+    position: absolute;
+  }
+  .circle::before,
+  .pulse {
+    animation-name: pulse;
+    animation-duration: 0.9s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+  }
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+      width: 7px;
+      height: 7px;
+      right: 0;
+      top: 0;
+    }
+    95% {
+      opacity: 0.2;
+      right: -10.5px;
+      top: -10.5px;
+      width: 28px;
+      height: 28px;
+    }
+    100% {
+      opacity: 0;
+      width: 7px;
+      height: 7px;
+      right: 0;
+      top: 0;
+    }
+  }
+}
